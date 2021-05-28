@@ -89,13 +89,6 @@ body{
     margin: auto;
 }
 
-.container-footer footer .logo-footer{
-    text-align: center;
-}
-
-.container-footer footer .logo-footer img{
-    width: 100px;
-}
 
 .container-footer footer .redes-footer{
     display: flex;
@@ -147,7 +140,11 @@ footer .redes-footer .fa-instagram:hover{
     color: #8e8e8e;
     font-weight: 500;
 }
-
+.contact-us{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
 /* Responsive Design - adaptable a dispositivos moviles*/
 
 @media screen and (max-width: 1220px){

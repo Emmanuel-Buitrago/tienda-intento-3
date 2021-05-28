@@ -13,6 +13,10 @@
 
 </head>
 <body>
+    <div class="imagen-light">
+      <img src="img/close.svg" alt="" class="close">
+      <img src="" alt="" class="agregar-imagen">
+    </div>
 
     <!--Header - menu-->
 
@@ -25,17 +29,45 @@
       <div class="container-info-cover">
         <table class="imag-sec">
           <tr>
-            <td><img id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></td>
-            <td rowspan="3"><img id="article-imagen-principal" src="img/articulos/1.jpg" alt=""></td>
+            <td><a href="#"><img class="no-bugs" id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></a></td>
+            <td rowspan="3"><a href="#"><img class="no-bugs" id="article-imagen-principal" src="img/articulos/1.jpg" alt=""></a></td>
           </tr>
           <tr>
-            <td><img id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></td>
+            <td><a href="#"><img class="no-bugs" id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></a></td>
           </tr>
           <tr>
-            <td><img id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></td>
+            <td><a href="#"><img class="no-bugs" id="article-imagen-secundaria" src="img/articulos/1.jpg" alt=""></a></td>
           </tr>
         </table>
 
+
+        <script>
+                const imagenes = document.querySelectorAll('.no-bugs')
+                const imagenLight = document.querySelector('.agregar-imagen');
+                const contenedorLight = document.querySelector('.imagen-light')
+                const closeLight = document.querySelector('.close')
+
+
+                imagenes.forEach(imagen => {
+                  imagen.addEventListener('click',()=>{
+                      aparecerImagen(imagen.getAttribute('src'));
+                  })
+                });
+
+                contenedorLight.addEventListener('click',(e)=>{
+                  if(e.target !== imagenLight){
+                      contenedorLight.classList.toggle('show')
+                      imagenLight.classList.toggle('showImage')
+                  }
+                })
+
+
+                const aparecerImagen = (imagen)=>{
+                  imagenLight.src = imagen;
+                  contenedorLight.classList.toggle('show')
+                  imagenLight.classList.toggle('showImage')
+                }
+        </script>
         <div class="txt-art">
           <h1>Tenis rojos NIKE deportivos</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -45,15 +77,20 @@
 
     <div class="container-content">
         <article>
+            <h1 class="precio">Precio:  $150.000</h1>
+            <img class="mapa" src="img/mapa.png">
         </article>
 
         <div class="container-aside">
 
             <aside>
                 <img src="img/img6.jpg" alt="">
-                <h2>Titulo del articulo</h2>
+                <h2>Vendedor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quo, vel officiis voluptas minima at totam provident cupiditate ad consectetur!</p>
-                <a href="#"><button>leer más</button></a>
+
+            </aside>
+            <aside>
+              <a href="#"><button>Añadir al carrito</button></a>
             </aside>
 
         </div>
@@ -62,9 +99,10 @@
     <div class="container-footer">
 
         <footer>
-            <div class="logo-footer">
-                <img src="img/logo-magtimus-pro-.png" alt="">
-            </div>
+          <div class="contact-us">
+              <h2 class="brand"> Emmanuel Buitrago y Carlos Ramirez</h2>
+              <p>Somos expertos en la creación de tus sueños</p>
+          </div>
 
             <div class="redes-footer">
                 <a href="#"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
